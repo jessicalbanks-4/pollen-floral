@@ -81,7 +81,7 @@ export default function StudioSection() {
                 <span
                   className="label block mb-8"
                   style={{
-                    color: hovered ? 'rgba(212,218,108,0.7)' : 'rgba(212,218,108,0.45)',
+                    color: hovered ? 'rgba(19,14,10,0.5)' : 'rgba(212,218,108,0.45)',
                     fontSize: '0.6rem',
                     transition: 'color 0.4s ease',
                   }}
@@ -93,9 +93,9 @@ export default function StudioSection() {
                 <h3
                   className="display-sm mb-6"
                   style={{
-                    color: 'var(--color-cream)',
+                    color: hovered ? 'var(--color-void)' : 'var(--color-cream)',
                     transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
-                    transition: 'transform 0.3s ease',
+                    transition: 'transform 0.3s ease, color 0.4s ease',
                   }}
                 >
                   {p.title}
@@ -106,7 +106,7 @@ export default function StudioSection() {
                   className="mb-6"
                   style={{
                     height: '1px',
-                    backgroundColor: hovered ? 'rgba(245,240,232,0.2)' : 'rgba(245,240,232,0.08)',
+                    backgroundColor: hovered ? 'rgba(19,14,10,0.15)' : 'rgba(245,240,232,0.08)',
                     transition: 'background-color 0.4s ease',
                   }}
                 />
@@ -115,7 +115,7 @@ export default function StudioSection() {
                 <p
                   className="body-sm leading-loose flex-1"
                   style={{
-                    color: hovered ? 'rgba(245,240,232,0.8)' : 'rgba(245,240,232,0.55)',
+                    color: hovered ? 'rgba(19,14,10,0.7)' : 'rgba(245,240,232,0.55)',
                     transition: 'color 0.4s ease',
                   }}
                 >
