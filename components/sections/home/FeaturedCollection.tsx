@@ -95,7 +95,7 @@ export default function FeaturedCollection() {
       )}
 
       {/* Section header */}
-      <div className="px-6 md:px-16 mb-10 flex items-end justify-between max-w-7xl mx-auto">
+      <div className="mb-10 flex items-end justify-between max-w-7xl mx-auto" style={{ paddingLeft: 'clamp(3rem, 6vw, 5rem)', paddingRight: 'clamp(3rem, 6vw, 5rem)' }}>
         <div>
           <p className="label mb-2" style={{ color: 'rgba(212,218,108,0.55)', fontSize: '0.6rem', letterSpacing: '0.22em' }}>
             This Season
