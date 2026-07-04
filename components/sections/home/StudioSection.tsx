@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import Link from 'next/link';
 
 const pillars = [
@@ -21,6 +22,8 @@ const pillars = [
 ];
 
 export default function StudioSection() {
+  const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
+
   return (
     <section
       className="section-gap site-px"
@@ -50,61 +53,77 @@ export default function StudioSection() {
 
         {/* Three-column pillar cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
-          {pillars.map((p) => (
-            <div
-              key={p.num}
-              className="group relative overflow-hidden flex flex-col cursor-default"
-              style={{
-                backgroundColor: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(245,240,232,0.12)',
-                padding: '2.5rem',
-              }}
-            >
-              {/* Top accent line — always visible, grows on hover */}
+          {pillars.map((p, i) => {
+            const hovered = hoveredIdx === i;
+            return (
               <div
-                className="absolute top-0 left-0 h-0.5 transition-all duration-500 ease-out"
+                key={p.num}
+                className="group relative overflow-hidden flex flex-col cursor-default"
+                onMouseEnter={() => setHoveredIdx(i)}
+                onMouseLeave={() => setHoveredIdx(null)}
                 style={{
-                  width: '2.5rem',
-                  backgroundColor: 'var(--color-chartreuse)',
-                  transitionProperty: 'width',
+                  backgroundColor: hovered ? 'var(--color-blue-pollen)' : 'rgba(255,255,255,0.03)',
+                  border: `1px solid ${hovered ? 'transparent' : 'rgba(245,240,232,0.12)'}`,
+                  padding: '2.5rem',
+                  transition: 'background-color 0.4s ease, border-color 0.4s ease',
                 }}
-              />
-              <div
-                className="absolute top-0 left-0 h-0.5 w-0 transition-all duration-500 ease-out group-hover:w-full"
-                style={{ backgroundColor: 'var(--color-chartreuse)', opacity: 0.4 }}
-              />
-
-              {/* Number */}
-              <span
-                className="label block mb-8"
-                style={{ color: 'rgba(212,218,108,0.45)', fontSize: '0.6rem' }}
               >
-                {p.num}
-              </span>
+                {/* Top accent line — full width on hover */}
+                <div
+                  className="absolute top-0 left-0 h-0.5 transition-all duration-500 ease-out"
+                  style={{
+                    width: hovered ? '100%' : '2.5rem',
+                    backgroundColor: 'var(--color-chartreuse)',
+                  }}
+                />
 
-              {/* Title */}
-              <h3
-                className="display-sm mb-6 transition-all duration-300 ease-out group-hover:-translate-y-1"
-                style={{ color: 'var(--color-cream)' }}
-              >
-                {p.title}
-              </h3>
+                {/* Number */}
+                <span
+                  className="label block mb-8"
+                  style={{
+                    color: hovered ? 'rgba(212,218,108,0.7)' : 'rgba(212,218,108,0.45)',
+                    fontSize: '0.6rem',
+                    transition: 'color 0.4s ease',
+                  }}
+                >
+                  {p.num}
+                </span>
 
-              {/* Divider */}
-              <div
-                className="mb-6"
-                style={{ height: '1px', backgroundColor: 'rgba(245,240,232,0.08)' }}
-              />
+                {/* Title */}
+                <h3
+                  className="display-sm mb-6"
+                  style={{
+                    color: 'var(--color-cream)',
+                    transform: hovered ? 'translateY(-2px)' : 'translateY(0)',
+                    transition: 'transform 0.3s ease',
+                  }}
+                >
+                  {p.title}
+                </h3>
 
-              {/* Body */}
-              <p
-                className="body-sm leading-loose flex-1"
-                style={{ color: 'rgba(245,240,232,0.55)' }}
-              >
-                {p.body}
-              </p>
-            </div>
-          ))}
+                {/* Divider */}
+                <div
+                  className="mb-6"
+                  style={{
+                    height: '1px',
+                    backgroundColor: hovered ? 'rgba(245,240,232,0.2)' : 'rgba(245,240,232,0.08)',
+                    transition: 'background-color 0.4s ease',
+                  }}
+                />
+
+                {/* Body */}
+                <p
+                  className="body-sm leading-loose flex-1"
+                  style={{
+                    color: hovered ? 'rgba(245,240,232,0.8)' : 'rgba(245,240,232,0.55)',
+                    transition: 'color 0.4s ease',
+                  }}
+                >
+                  {p.body}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
