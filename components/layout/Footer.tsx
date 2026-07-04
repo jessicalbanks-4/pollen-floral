@@ -13,20 +13,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
           <div>
             <p
-              className="mb-3"
+              className="label mb-3"
               style={{
                 fontFamily: 'var(--font-display)',
-                fontSize: '2rem',
-                fontStyle: 'italic',
+                fontSize: '1.5rem',
                 color: 'var(--color-cream)',
-                letterSpacing: '-0.02em',
+                letterSpacing: '0.12em',
                 lineHeight: 1,
+                fontWeight: 700,
               }}
             >
-              Pollen
-            </p>
-            <p className="body-sm" style={{ color: 'rgba(245,240,232,0.4)', maxWidth: '24ch' }}>
-              Boutique floral studio. East Nashville, TN. Making flowers the whole point since day one.
+              POLLEN
             </p>
           </div>
 
@@ -73,9 +70,6 @@ export default function Footer() {
         >
           <p className="label" style={{ color: 'rgba(245,240,232,0.2)', fontSize: '0.6rem' }}>
             © {new Date().getFullYear()} Pollen Floral Studio. All rights reserved.
-          </p>
-          <p className="label" style={{ color: 'rgba(212,218,108,0.35)', fontSize: '0.6rem' }}>
-            Nashville&apos;s Studio Florist
           </p>
         </div>
       </div>

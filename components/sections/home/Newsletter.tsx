@@ -22,7 +22,7 @@ export default function Newsletter() {
       style={{ backgroundColor: 'var(--color-void-soft)' }}
     >
       <motion.div
-        className="max-w-2xl mx-auto text-center"
+        className="max-w-2xl mx-auto text-center flex flex-col items-center"
         initial={{ opacity: 0, y: 30 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -36,7 +36,7 @@ export default function Newsletter() {
             You&apos;re in. Watch your inbox.
           </p>
         ) : (
-          <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-0 max-w-md mx-auto">
+          <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-0 w-full max-w-md">
             <input
               type="email"
               value={email}
