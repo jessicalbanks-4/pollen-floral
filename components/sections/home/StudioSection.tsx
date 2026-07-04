@@ -40,14 +40,6 @@ export default function StudioSection() {
               100% unique.<br />
               <span style={{ color: 'var(--color-peach)' }}>100% of the time.</span>
             </h2>
-            <Link
-              href="/about"
-              className="label inline-flex items-center gap-3 group self-start md:self-auto"
-              style={{ color: 'var(--color-chartreuse)', fontSize: '0.65rem' }}
-            >
-              <span>Our story</span>
-              <span className="transition-transform duration-200 group-hover:translate-x-2">→</span>
-            </Link>
           </div>
         </div>
 
