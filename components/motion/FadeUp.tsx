@@ -6,17 +6,19 @@ interface FadeUpProps {
   children: React.ReactNode;
   delay?: number;
   className?: string;
+  style?: React.CSSProperties;
   onMount?: boolean;
 }
 
 const easing = [0.25, 0.46, 0.45, 0.94] as const;
 
-export default function FadeUp({ children, delay = 0, className, onMount = false }: FadeUpProps) {
+export default function FadeUp({ children, delay = 0, className, style, onMount = false }: FadeUpProps) {
   const reduced = useReducedMotion();
 
   return (
     <motion.div
       className={className}
+      style={style}
       initial={{ opacity: 0, y: reduced ? 0 : 24 }}
       {...(onMount
         ? { animate: { opacity: 1, y: 0 } }

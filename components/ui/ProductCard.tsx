@@ -39,7 +39,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const reduced = useReducedMotion();
 
   const handleAdd = () => {
-    addItem({ id: product.id, name: product.name, price: product.price, quantity: 1 });
+    addItem({ id: product.id, name: product.title, price: product.price ?? 0, quantity: 1 });
   };
 
   return (
@@ -50,12 +50,12 @@ export default function ProductCard({ product }: ProductCardProps) {
       whileHover={reduced ? {} : { boxShadow: '0 12px 40px rgba(98,82,50,0.12)' }}
       transition={{ duration: 0.3 }}
     >
-      {product.badge && (
+      {product.onSale && (
         <span
           className="absolute top-3 left-3 z-10 label px-2 py-1"
           style={{ backgroundColor: 'var(--color-chartreuse)', color: 'var(--color-bark)' }}
         >
-          {product.badge}
+          Sale
         </span>
       )}
 
@@ -83,7 +83,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               className="absolute bottom-0 left-0 right-0 py-3 label text-center cursor-pointer"
               style={{ backgroundColor: 'var(--color-chartreuse)', color: 'var(--color-bark)' }}
               onClick={handleAdd}
-              aria-label={`Add ${product.name} to cart`}
+              aria-label={`Add ${product.title} to cart`}
             >
               Add to Cart
             </motion.button>
@@ -97,10 +97,10 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.category}
         </p>
         <h3 className="font-medium mb-1" style={{ fontFamily: 'var(--font-body)' }}>
-          {product.name}
+          {product.title}
         </h3>
         <p className="label font-bold" style={{ color: 'var(--color-bark)' }}>
-          {product.priceLabel}
+          {product.price ? `$${product.price}` : 'Inquiry'}
         </p>
       </div>
     </motion.div>
