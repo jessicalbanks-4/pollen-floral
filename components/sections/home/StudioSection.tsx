@@ -48,43 +48,61 @@ export default function StudioSection() {
           </div>
         </div>
 
-        {/* Three-column hover panels */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8" style={{ backgroundColor: 'transparent' }}>
+        {/* Three-column pillar cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-20">
           {pillars.map((p) => (
             <div
               key={p.num}
-              className="group relative overflow-hidden px-8 py-12 cursor-default border"
-              style={{ backgroundColor: 'var(--color-void-soft)', borderColor: 'rgba(245,240,232,0.06)' }}
+              className="group relative overflow-hidden flex flex-col cursor-default"
+              style={{
+                backgroundColor: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(245,240,232,0.12)',
+                padding: '2.5rem',
+              }}
             >
-              {/* Number — fades out on hover */}
+              {/* Top accent line — always visible, grows on hover */}
+              <div
+                className="absolute top-0 left-0 h-0.5 transition-all duration-500 ease-out"
+                style={{
+                  width: '2.5rem',
+                  backgroundColor: 'var(--color-chartreuse)',
+                  transitionProperty: 'width',
+                }}
+              />
+              <div
+                className="absolute top-0 left-0 h-0.5 w-0 transition-all duration-500 ease-out group-hover:w-full"
+                style={{ backgroundColor: 'var(--color-chartreuse)', opacity: 0.4 }}
+              />
+
+              {/* Number */}
               <span
-                className="label block mb-6 transition-opacity duration-300 group-hover:opacity-0"
-                style={{ color: 'rgba(212,218,108,0.35)', fontSize: '0.6rem' }}
+                className="label block mb-8"
+                style={{ color: 'rgba(212,218,108,0.45)', fontSize: '0.6rem' }}
               >
                 {p.num}
               </span>
 
-              {/* Title — shifts up on hover */}
+              {/* Title */}
               <h3
-                className="display-sm mb-6 transition-all duration-300 ease-out group-hover:-translate-y-2"
+                className="display-sm mb-6 transition-all duration-300 ease-out group-hover:-translate-y-1"
                 style={{ color: 'var(--color-cream)' }}
               >
                 {p.title}
               </h3>
 
-              {/* Body — always visible, slides up slightly on hover */}
+              {/* Divider */}
+              <div
+                className="mb-6"
+                style={{ height: '1px', backgroundColor: 'rgba(245,240,232,0.08)' }}
+              />
+
+              {/* Body */}
               <p
-                className="body-sm leading-relaxed transition-all duration-300 ease-out group-hover:translate-y-[-4px]"
-                style={{ color: 'rgba(245,240,232,0.5)' }}
+                className="body-sm leading-loose flex-1"
+                style={{ color: 'rgba(245,240,232,0.55)' }}
               >
                 {p.body}
               </p>
-
-              {/* Chartreuse accent line — grows from left on hover */}
-              <div
-                className="absolute bottom-0 left-0 h-px w-0 transition-all duration-500 ease-out group-hover:w-full"
-                style={{ backgroundColor: 'var(--color-chartreuse)' }}
-              />
             </div>
           ))}
         </div>
