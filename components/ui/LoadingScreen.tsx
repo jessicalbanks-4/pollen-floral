@@ -31,10 +31,10 @@ export default function LoadingScreen() {
             <Image
               src="/images/brown-logo.png"
               alt="Pollen Floral Studio"
-              width={160}
-              height={160}
+              width={500}
+              height={500}
               priority
-              style={{ width: 'clamp(100px, 18vw, 160px)', height: 'auto' }}
+              style={{ width: 'clamp(260px, 45vw, 500px)', height: 'auto' }}
             />
           </motion.div>
         </motion.div>
