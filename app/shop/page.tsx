@@ -39,7 +39,7 @@ export default function ShopPage() {
       {/* Hero header */}
       <section
         ref={headerRef}
-        className="relative pt-32 pb-20 px-6 md:px-10 overflow-hidden border-b"
+        className="site-px relative pt-32 pb-20 overflow-hidden border-b"
         style={{ borderColor: 'rgba(245,240,232,0.06)' }}
       >
         <PollenParticles count={30} />
@@ -78,7 +78,7 @@ export default function ShopPage() {
 
       {/* Sticky filter bar */}
       <div
-        className="sticky top-16 z-40 px-6 md:px-10 py-3 border-b"
+        className="site-px sticky top-16 z-40 py-3 border-b"
         style={{
           backgroundColor: 'rgba(19,14,10,0.94)',
           backdropFilter: 'blur(12px)',
@@ -106,7 +106,7 @@ export default function ShopPage() {
       </div>
 
       {/* Product grid */}
-      <div className="px-6 md:px-10 py-16 max-w-7xl mx-auto">
+      <div className="site-px py-16 max-w-7xl mx-auto">
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -217,7 +217,7 @@ export default function ShopPage() {
 
       {/* Bottom CTA */}
       <section
-        className="px-6 md:px-10 py-24 border-t text-center"
+        className="site-px py-24 border-t text-center"
         style={{ borderColor: 'rgba(245,240,232,0.06)' }}
       >
         <p className="label mb-4" style={{ color: 'rgba(212,218,108,0.45)' }}>

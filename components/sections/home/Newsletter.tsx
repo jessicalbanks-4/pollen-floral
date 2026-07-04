@@ -18,7 +18,7 @@ export default function Newsletter() {
   return (
     <section
       ref={ref}
-      className="section-gap px-6 md:px-10"
+      className="section-gap site-px"
       style={{ backgroundColor: 'var(--color-void-soft)' }}
     >
       <motion.div

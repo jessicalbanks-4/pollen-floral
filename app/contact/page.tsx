@@ -56,7 +56,7 @@ export default function ContactPage() {
   return (
     <div style={{ backgroundColor: 'var(--color-void)', minHeight: '100vh' }}>
       {/* Header */}
-      <section className="relative pt-32 pb-20 px-6 md:px-10 overflow-hidden border-b" style={{ borderColor: 'rgba(245,240,232,0.06)' }}>
+      <section className="site-px relative pt-32 pb-20 overflow-hidden border-b" style={{ borderColor: 'rgba(245,240,232,0.06)' }}>
         <PollenParticles count={35} />
         <div className="relative max-w-7xl mx-auto">
           <p className="label mb-3" style={{ color: 'rgba(212,218,108,0.5)' }}>Let&apos;s Work Together</p>
@@ -68,7 +68,7 @@ export default function ContactPage() {
       </section>
 
       {/* Form + info */}
-      <section className="px-6 md:px-10 py-20">
+      <section className="site-px py-20">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Info column */}
           <div>

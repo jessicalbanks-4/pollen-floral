@@ -35,6 +35,12 @@
   --font-display: 'DM Sans', system-ui, sans-serif;
   --font-body: 'DM Sans', system-ui, sans-serif;
   --section-gap: clamp(80px, 12vw, 160px);
+  --site-px: clamp(3rem, 6vw, 5rem);
+}
+
+.site-px {
+  padding-left: var(--site-px);
+  padding-right: var(--site-px);
 }
 
 * {

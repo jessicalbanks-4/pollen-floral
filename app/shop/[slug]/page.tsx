@@ -142,7 +142,7 @@ export default function ProductDetailPage() {
     <div style={{ backgroundColor: 'var(--color-void)', minHeight: '100vh' }}>
       {/* Breadcrumb */}
       <div
-        className="pt-24 pb-6 px-6 md:px-10 border-b"
+        className="site-px pt-24 pb-6 border-b"
         style={{ borderColor: 'rgba(245,240,232,0.06)' }}
       >
         <div className="max-w-7xl mx-auto flex gap-2 items-center">
@@ -161,7 +161,7 @@ export default function ProductDetailPage() {
       </div>
 
       {/* Main two-column layout */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
+      <div className="site-px max-w-7xl mx-auto py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
 
           {/* Left — Image gallery */}

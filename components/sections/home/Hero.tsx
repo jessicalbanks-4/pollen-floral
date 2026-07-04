@@ -62,7 +62,7 @@ export default function Hero() {
       <PollenParticles count={50} />
 
       {/* CTA — bottom left, only element */}
-      <div className="relative z-10 max-w-7xl mx-auto px-12 md:px-16 pb-16 md:pb-24 w-full">
+      <div className="site-px relative z-10 max-w-7xl mx-auto pb-16 md:pb-24 w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}

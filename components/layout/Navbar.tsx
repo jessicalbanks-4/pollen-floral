@@ -96,7 +96,7 @@ export default function Navbar() {
         }}
         transition={reduced ? { duration: 0 } : { duration: 0.5, ease: 'easeOut' }}
       >
-        <nav className="max-w-7xl mx-auto px-12 md:px-16 h-16 flex items-center justify-between">
+        <nav className="site-px max-w-7xl mx-auto h-16 flex items-center justify-between">
           <PollenLogo dark={isDark} />
 
           {/* Desktop links */}

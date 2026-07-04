@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     <footer
-      className="border-t px-6 md:px-10 py-16"
+      className="site-px border-t py-16"
       style={{
         backgroundColor: 'var(--color-void)',
         borderColor: 'rgba(245,240,232,0.07)',

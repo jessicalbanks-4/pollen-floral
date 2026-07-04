@@ -189,7 +189,7 @@ export default function FAQPage() {
 
       {/* Hero */}
       <section
-        className="relative pt-72 pb-20 px-6 md:px-10 overflow-hidden border-b"
+        className="site-px relative pt-72 pb-20 overflow-hidden border-b"
         style={{ borderColor: 'rgba(245,240,232,0.06)' }}
       >
         <PollenParticles count={25} />
@@ -225,7 +225,7 @@ export default function FAQPage() {
       </section>
 
       {/* Category nav + content */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 md:py-24">
+      <div className="site-px max-w-7xl mx-auto py-16 md:py-24">
         <div className="flex flex-col md:flex-row gap-16 md:gap-24">
 
           {/* Sticky category sidebar */}
@@ -282,7 +282,7 @@ export default function FAQPage() {
 
       {/* Bottom CTA */}
       <section
-        className="px-6 md:px-10 py-24 border-t"
+        className="site-px py-24 border-t"
         style={{ borderColor: 'rgba(245,240,232,0.06)' }}
       >
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-8">

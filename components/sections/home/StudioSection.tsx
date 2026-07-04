@@ -23,7 +23,7 @@ const pillars = [
 export default function StudioSection() {
   return (
     <section
-      className="section-gap px-6 md:px-10"
+      className="section-gap site-px"
       style={{ backgroundColor: 'var(--color-void-soft)' }}
     >
       <div className="max-w-7xl mx-auto">

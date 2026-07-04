@@ -140,7 +140,7 @@ export default function AboutPage() {
           style={{ background: 'radial-gradient(ellipse at 30% 60%, rgba(239,170,155,0.06) 0%, transparent 60%)' }}
           aria-hidden="true"
         />
-        <div className="relative max-w-7xl mx-auto px-6 md:px-10 py-24">
+        <div className="site-px relative max-w-7xl mx-auto py-24">
           <p className="label mb-6" style={{ color: 'rgba(212,218,108,0.5)' }}>About Pollen</p>
           <ScrollRevealLine>
             <h1 className="display-xl mb-0" style={{ color: 'var(--color-cream)' }}>
@@ -171,7 +171,7 @@ export default function AboutPage() {
       {/* Story panels */}
       <section
         ref={pinRef}
-        className="px-6 md:px-10"
+        className="site-px"
         style={{ backgroundColor: 'var(--color-void-soft)' }}
       >
         <div ref={panelRef} className="max-w-7xl mx-auto">
