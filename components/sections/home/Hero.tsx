@@ -62,7 +62,7 @@ export default function Hero() {
       <PollenParticles count={50} />
 
       {/* CTA — bottom left, only element */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 pb-16 md:pb-24 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-12 md:px-16 pb-16 md:pb-24 w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -70,12 +70,13 @@ export default function Hero() {
         >
           <Link
             href="/shop"
-            className="inline-flex items-center gap-3 px-7 py-3.5 label transition-all duration-300 hover:gap-5"
+            className="inline-flex items-center gap-3 px-9 py-5 label transition-all duration-300 hover:gap-5"
             style={{
               backgroundColor: 'var(--color-chartreuse)',
               color: 'var(--color-void)',
-              fontSize: '0.7rem',
+              fontSize: '0.85rem',
               letterSpacing: '0.18em',
+              fontWeight: 700,
             }}
           >
             Shop Now <span>→</span>

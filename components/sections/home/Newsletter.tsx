@@ -27,16 +27,9 @@ export default function Newsletter() {
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        <p className="label mb-4" style={{ color: 'rgba(212,218,108,0.5)' }}>
-          The Bloom Report
-        </p>
-        <h2 className="display-md mb-4" style={{ color: 'var(--color-cream)' }}>
-          Stay in the loop.
+        <h2 className="display-md mb-10" style={{ color: 'var(--color-cream)' }}>
+          Want to work together?<br />Let&apos;s chat.
         </h2>
-        <p className="body-lg mb-10" style={{ color: 'rgba(245,240,232,0.4)' }}>
-          What&apos;s in season, what we&apos;re obsessing over, and when you can get it.
-          No spam. Just flowers.
-        </p>
 
         {submitted ? (
           <p className="label" style={{ color: 'var(--color-chartreuse)' }}>

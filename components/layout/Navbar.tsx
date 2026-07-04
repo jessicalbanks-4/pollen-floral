@@ -88,15 +88,15 @@ export default function Navbar() {
       <motion.header
         className="fixed top-0 left-0 right-0 z-50"
         animate={{
-          backgroundColor: scrolled ? 'rgba(10,10,8,0.92)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
+          backgroundColor: scrolled ? 'rgba(10,10,8,0.92)' : 'rgba(10,10,8,0.45)',
+          backdropFilter: scrolled ? 'blur(12px)' : 'blur(6px)',
           borderBottomColor: scrolled ? 'rgba(245,240,232,0.06)' : 'transparent',
           borderBottomWidth: '1px',
           borderBottomStyle: 'solid',
         }}
         transition={reduced ? { duration: 0 } : { duration: 0.5, ease: 'easeOut' }}
       >
-        <nav className="max-w-7xl mx-auto px-6 md:px-10 h-16 flex items-center justify-between">
+        <nav className="max-w-7xl mx-auto px-12 md:px-16 h-16 flex items-center justify-between">
           <PollenLogo dark={isDark} />
 
           {/* Desktop links */}
@@ -105,8 +105,8 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="label transition-opacity duration-200 hover:opacity-100"
-                style={{ color: 'rgba(245,240,232,0.55)', letterSpacing: '0.18em' }}
+                className="label font-bold transition-opacity duration-200 hover:opacity-100"
+                style={{ color: 'rgba(245,240,232,0.9)', letterSpacing: '0.18em' }}
               >
                 {link.label}
               </Link>

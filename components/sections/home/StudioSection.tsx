@@ -34,8 +34,8 @@ export default function StudioSection() {
           </p>
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
             <h2 className="display-lg" style={{ color: 'var(--color-cream)' }}>
-              Not a template.<br />
-              <span style={{ color: 'var(--color-peach)' }}>Never generic.</span>
+              100% unique.<br />
+              <span style={{ color: 'var(--color-peach)' }}>100% of the time.</span>
             </h2>
             <Link
               href="/about"
@@ -49,12 +49,12 @@ export default function StudioSection() {
         </div>
 
         {/* Three-column hover panels */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px" style={{ backgroundColor: 'rgba(245,240,232,0.06)' }}>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8" style={{ backgroundColor: 'transparent' }}>
           {pillars.map((p) => (
             <div
               key={p.num}
-              className="group relative overflow-hidden px-8 py-12 cursor-default"
-              style={{ backgroundColor: 'var(--color-void-soft)' }}
+              className="group relative overflow-hidden px-8 py-12 cursor-default border"
+              style={{ backgroundColor: 'var(--color-void-soft)', borderColor: 'rgba(245,240,232,0.06)' }}
             >
               {/* Number — fades out on hover */}
               <span
@@ -66,15 +66,15 @@ export default function StudioSection() {
 
               {/* Title — shifts up on hover */}
               <h3
-                className="display-sm transition-all duration-300 ease-out group-hover:-translate-y-2"
+                className="display-sm mb-6 transition-all duration-300 ease-out group-hover:-translate-y-2"
                 style={{ color: 'var(--color-cream)' }}
               >
                 {p.title}
               </h3>
 
-              {/* Body — slides up from below on hover */}
+              {/* Body — always visible, slides up slightly on hover */}
               <p
-                className="body-sm mt-4 opacity-0 translate-y-4 transition-all duration-300 ease-out group-hover:opacity-100 group-hover:translate-y-0"
+                className="body-sm leading-relaxed transition-all duration-300 ease-out group-hover:translate-y-[-4px]"
                 style={{ color: 'rgba(245,240,232,0.5)' }}
               >
                 {p.body}
