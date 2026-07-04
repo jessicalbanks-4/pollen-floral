@@ -345,20 +345,19 @@ export default function ProductDetailPage() {
                   Start an Inquiry →
                 </Link>
               ) : (
-                <button
-                  onClick={() => console.log('Add to cart:', product.id, selectedOptions)}
+                <Link
+                  href={`/checkout?product=${product.id}`}
                   className="inline-flex items-center justify-center gap-3 px-8 py-4 label transition-all duration-200 hover:opacity-90 mt-2"
                   style={{
-                    backgroundColor: 'var(--color-cream)',
+                    backgroundColor: 'var(--color-chartreuse)',
                     color: 'var(--color-void)',
                     fontSize: '0.65rem',
                     letterSpacing: '0.18em',
-                    border: 'none',
-                    cursor: 'pointer',
+                    fontWeight: 700,
                   }}
                 >
-                  Add to Cart
-                </button>
+                  Buy Now →
+                </Link>
               )}
             </div>
           </FadeUp>
