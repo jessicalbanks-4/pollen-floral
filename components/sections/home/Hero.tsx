@@ -36,7 +36,7 @@ export default function Hero() {
   }, [reduced]);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen min-h-[600px] flex flex-col items-center justify-between overflow-hidden">
+    <section ref={sectionRef} className="relative w-full h-screen min-h-[600px] overflow-hidden">
 
       {/* Video background — isolated layer, no logo composited into it */}
       <video
@@ -60,8 +60,7 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Logo — separate from video, centered */}
-      {/* Logo — same structure as loading screen: inset-0 flex center */}
+      {/* Logo — true center of hero, independent of nav */}
       <div className="absolute inset-0 z-10 flex items-center justify-center">
         <Image
           src="/images/transparent-logo.png"
@@ -69,32 +68,11 @@ export default function Hero() {
           width={500}
           height={500}
           priority
-          style={{ width: 'min(72vw, 52vh)', height: 'auto', display: 'block' }}
+          style={{ width: 'min(88vw, 78vh)', height: 'auto', display: 'block' }}
         />
       </div>
 
-      {/* CTA — pinned to bottom */}
-      <div className="site-px relative z-10 max-w-7xl mx-auto pb-16 md:pb-24 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <Link
-            href="/shop"
-            className="inline-flex items-center gap-3 px-9 py-5 label transition-all duration-300 hover:gap-5"
-            style={{
-              backgroundColor: 'var(--color-chartreuse)',
-              color: 'var(--color-void)',
-              fontSize: '0.85rem',
-              letterSpacing: '0.18em',
-              fontWeight: 700,
-            }}
-          >
-            Shop Now <span>→</span>
-          </Link>
-        </motion.div>
-      </div>
+
     </section>
   );
 }

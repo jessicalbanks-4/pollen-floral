@@ -22,7 +22,7 @@ function PollenLogo({ dark }: { dark: boolean }) {
         letterSpacing: '0.08em',
         textTransform: 'uppercase',
         fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)',
-        color: dark ? 'var(--color-cream)' : 'var(--color-void)',
+        color: 'var(--color-cream)',
         lineHeight: 1,
         textDecoration: 'none',
       }}
@@ -89,9 +89,12 @@ export default function Navbar() {
     <>
       <motion.header
         className="fixed top-0 left-0 right-0 z-50"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(10,10,8,0.55) 0%, transparent 100%)',
+        }}
         animate={{
-          backgroundColor: scrolled ? 'rgba(10,10,8,0.92)' : 'rgba(10,10,8,0.45)',
-          backdropFilter: scrolled ? 'blur(12px)' : 'blur(6px)',
+          backdropFilter: scrolled ? 'blur(12px)' : 'blur(0px)',
+          backgroundColor: scrolled ? 'rgba(10,10,8,0.92)' : 'transparent',
           borderBottomColor: scrolled ? 'rgba(245,240,232,0.06)' : 'transparent',
           borderBottomWidth: '1px',
           borderBottomStyle: 'solid',
@@ -101,40 +104,33 @@ export default function Navbar() {
         <nav className="site-px max-w-7xl mx-auto h-16 flex items-center justify-between">
           <PollenLogo dark={isDark} />
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
+          {/* Desktop nav links */}
+          <div className="hidden md:flex items-center gap-10">
+            {[
+              { href: '/shop', label: 'Shop' },
+              { href: '/about', label: 'About' },
+              { href: '/faq', label: 'FAQ' },
+              { href: '/contact', label: 'Inquire' },
+            ].map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="label font-bold transition-opacity duration-200 hover:opacity-100"
-                style={{ color: 'rgba(245,240,232,0.9)', letterSpacing: '0.18em' }}
+                className="label font-bold transition-opacity duration-200 hover:opacity-60"
+                style={{ color: 'var(--color-cream)', letterSpacing: '0.18em', fontSize: '0.7rem' }}
               >
                 {link.label}
               </Link>
             ))}
           </div>
 
-          {/* Instagram + hamburger */}
-          <div className="flex items-center gap-5">
-            <a
-              href="https://instagram.com/pollen_floral_studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hidden md:block label transition-opacity duration-200 hover:opacity-100"
-              style={{ color: 'rgba(245,240,232,0.4)', fontSize: '0.6rem' }}
-            >
-              @pollen_floral_studio
-            </a>
-
-            <button
-              className="md:hidden p-1"
-              onClick={() => setMobileOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu size={18} style={{ color: 'var(--color-cream)' }} />
-            </button>
-          </div>
+          {/* Hamburger — mobile only */}
+          <button
+            className="md:hidden p-1"
+            onClick={() => setMobileOpen(true)}
+            aria-label="Open menu"
+          >
+            <Menu size={18} style={{ color: 'var(--color-cream)' }} />
+          </button>
         </nav>
       </motion.header>
 
@@ -160,7 +156,13 @@ export default function Navbar() {
             </div>
 
             <nav className="flex-1 flex flex-col justify-center px-8 gap-2">
-              {[{ href: '/', label: 'Home' }, ...links].map((link, i) => (
+              {[
+                { href: '/', label: 'Home' },
+                { href: '/shop', label: 'Shop' },
+                { href: '/about', label: 'About' },
+                { href: '/faq', label: 'FAQ' },
+                { href: '/contact', label: 'Inquire' },
+              ].map((link, i) => (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, y: 20 }}

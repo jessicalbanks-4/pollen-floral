@@ -28,7 +28,7 @@ export default function LoadingScreen() {
             width={500}
             height={500}
             priority
-            style={{ width: 'min(72vw, 52vh)', height: 'auto', display: 'block' }}
+            style={{ width: 'min(88vw, 78vh)', height: 'auto', display: 'block' }}
           />
         </motion.div>
       )}
