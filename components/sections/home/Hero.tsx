@@ -61,11 +61,8 @@ export default function Hero() {
       />
 
       {/* Logo — separate from video, centered */}
-      {/* Logo pinned to true viewport center — matches loading screen position exactly */}
-      <div
-        className="absolute z-10"
-        style={{ top: '50vh', left: '50%', transform: 'translate(-50%, -50%)' }}
-      >
+      {/* Logo — same structure as loading screen: inset-0 flex center */}
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
         <Image
           src="/images/transparent-logo.png"
           alt="Pollen Floral Studio"

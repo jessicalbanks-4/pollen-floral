@@ -23,7 +23,7 @@ export default function LoadingScreen() {
           transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         >
           <Image
-            src="/images/brown-logo.png"
+            src="/images/transparent-logo.png"
             alt="Pollen Floral Studio"
             width={500}
             height={500}
