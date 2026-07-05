@@ -5,7 +5,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
-import PollenParticles from '@/components/ui/PollenParticles';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,8 +36,9 @@ export default function Hero() {
   }, [reduced]);
 
   return (
-    <section ref={sectionRef} className="relative w-full h-screen min-h-[600px] flex items-end overflow-hidden">
-      {/* Video background */}
+    <section ref={sectionRef} className="relative w-full h-screen min-h-[600px] flex flex-col items-center justify-between overflow-hidden">
+
+      {/* Video background — isolated layer, no logo composited into it */}
       <video
         ref={videoRef}
         src="/videos/hero-loop.mp4"
@@ -50,23 +51,37 @@ export default function Hero() {
         aria-hidden="true"
       />
 
-      {/* Subtle gradient — just enough at bottom for CTA legibility */}
+      {/* Gradient overlay for legibility */}
       <div
         className="absolute inset-0"
         style={{
-          background: 'linear-gradient(to top, rgba(10,10,8,0.75) 0%, rgba(10,10,8,0.1) 35%, transparent 100%)',
+          background: 'linear-gradient(to top, rgba(10,10,8,0.8) 0%, rgba(10,10,8,0.15) 40%, transparent 100%)',
         }}
         aria-hidden="true"
       />
 
-      <PollenParticles count={50} />
+      {/* Logo — separate from video, centered */}
+      {/* Logo pinned to true viewport center — matches loading screen position exactly */}
+      <div
+        className="absolute z-10"
+        style={{ top: '50vh', left: '50%', transform: 'translate(-50%, -50%)' }}
+      >
+        <Image
+          src="/images/transparent-logo.png"
+          alt="Pollen Floral Studio"
+          width={500}
+          height={500}
+          priority
+          style={{ width: 'min(72vw, 52vh)', height: 'auto', display: 'block' }}
+        />
+      </div>
 
-      {/* CTA — bottom left, only element */}
+      {/* CTA — pinned to bottom */}
       <div className="site-px relative z-10 max-w-7xl mx-auto pb-16 md:pb-24 w-full">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
           <Link
             href="/shop"

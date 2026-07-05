@@ -22,21 +22,14 @@ export default function LoadingScreen() {
           exit={{ opacity: 0 }}
           transition={{ duration: 0.9, ease: [0.76, 0, 0.24, 1] }}
         >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.92 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 1.04 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <Image
-              src="/images/brown-logo.png"
-              alt="Pollen Floral Studio"
-              width={500}
-              height={500}
-              priority
-              style={{ width: 'clamp(260px, 45vw, 500px)', height: 'auto' }}
-            />
-          </motion.div>
+          <Image
+            src="/images/brown-logo.png"
+            alt="Pollen Floral Studio"
+            width={500}
+            height={500}
+            priority
+            style={{ width: 'min(72vw, 52vh)', height: 'auto', display: 'block' }}
+          />
         </motion.div>
       )}
     </AnimatePresence>

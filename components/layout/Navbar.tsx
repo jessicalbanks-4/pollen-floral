@@ -11,20 +11,23 @@ const links = [
   { href: '/contact', label: 'Inquire' },
 ];
 
-// Switch between inverse (white) logo on dark backgrounds and the brown logo on light ones.
-// Drop /images/logo.png (brown version) in public/images/ to activate the light-mode swap.
 function PollenLogo({ dark }: { dark: boolean }) {
-  const src = dark ? '/images/transparent-logo.png' : '/images/brown-logo.png';
   return (
-    <Link href="/" aria-label="Pollen Floral Studio" style={{ display: 'block', lineHeight: 0 }}>
-      <Image
-        src={src}
-        alt="Pollen Floral Studio"
-        width={80}
-        height={80}
-        priority
-        style={{ width: 'clamp(64px, 8vw, 80px)', height: 'auto' }}
-      />
+    <Link
+      href="/"
+      aria-label="Pollen Floral Studio"
+      style={{
+        fontFamily: 'var(--font-display)',
+        fontWeight: 700,
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        fontSize: 'clamp(0.75rem, 1.5vw, 0.95rem)',
+        color: dark ? 'var(--color-cream)' : 'var(--color-void)',
+        lineHeight: 1,
+        textDecoration: 'none',
+      }}
+    >
+      Pollen Floral Studio
     </Link>
   );
 }
